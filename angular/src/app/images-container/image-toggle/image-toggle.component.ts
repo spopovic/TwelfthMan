@@ -8,7 +8,7 @@ import { ImagesService } from '../../services/images.service';
 })
 export class ImageToggleComponent implements OnInit {
 	activeText = 'Active';
-	deleteText = 'Delete';
+	deleteText = 'Deleted';
 
 	constructor(
 		private imageService: ImagesService
