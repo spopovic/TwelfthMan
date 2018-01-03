@@ -1,0 +1,70 @@
+@mixin assert-ascending($map, $map-name) {
+	$prev-key: null;
+	$prev-num: null;
+	@each $key, $num in $map {
+	@if $prev-num == null {
+		// Do nothing
+	} @else if not comparable($prev-num, $num) {
+		@warn 'Potentially invalid value for #{$map-name}: This map must be in ascending order, but key \'#{$key}\' has value #{$num} whose unit makes it incomparable to #{$prev-num}, the value of the previous key \'#{$prev-key}\' !';
+	} @else if $prev-num >= $num {
+		@warn 'Invalid value for #{$map-name}: This map must be in ascending order, but key \'#{$key}\' has value #{$num} which isn\'t greater than #{$prev-num}, the value of the previous key \'#{$prev-key}\' !';
+	}
+	$prev-key: $key;
+	$prev-num: $num;
+	}
+}
+
+@include assert-ascending($grid-breakpoints, '$grid-breakpoints');
+@include assert-ascending($container-max-widths, '$container-max-widths');
+
+//----------  Bootstrap - Container widths
+//------------------------------------------------------------------------------
+
+@if $enable-grid-classes {
+	.container {
+		@include make-container;
+		@include make-container-max-widths;
+	}
+}
+
+//----------  Bootstrap - Fluid container
+//------------------------------------------------------------------------------
+
+@if $enable-grid-classes {
+	.container-fluid {
+		@include make-container;
+		max-width: map-get($container-max-widths, xl);
+	}
+}
+
+//----------  Bootstrap - Row
+//------------------------------------------------------------------------------
+
+@if $enable-grid-classes {
+	.row {
+		@include make-row;
+	}
+}
+
+//----------  Bootstrap - Columns
+//------------------------------------------------------------------------------
+
+@if $enable-grid-classes {
+	@include make-grid-columns;
+}
+
+//----------  Responsive visibility utilities
+//------------------------------------------------------------------------------
+
+@each $bp in map-keys($grid-breakpoints) {
+	.hidden-#{$bp}-up {
+		@include media-breakpoint-up($bp) {
+			display: none !important;
+		}
+	}
+	.hidden-#{$bp}-down {
+		@include media-breakpoint-down($bp) {
+			display: none !important;
+		}
+	}
+}

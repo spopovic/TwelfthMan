@@ -1,0 +1,21 @@
+//----------  header
+//------------------------------------------------------------------------------
+@import 'src/assets/scss/config/variables';
+@import 'src/assets/scss/base/breakpoints';
+
+.header {
+	background-color: $white;
+	height: 180px;
+	display: flex;
+	align-items: flex-end;
+	padding: 0 0 40px;
+	flex-wrap: wrap;
+	h1 {
+		color: $purple-font;
+		font-size: 34px;
+	}
+	@include media-breakpoint-down(sm) {
+		height: auto;
+		padding: 20px 0;
+	}
+}

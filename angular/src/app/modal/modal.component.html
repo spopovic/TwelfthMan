@@ -1,0 +1,17 @@
+<div [ngClass]="(getModalState()) ? 'modal modal--show' : 'modal'" id="modal">
+	<div class="modal__box">
+		<h2 class="modal__title">Are you sure you want to delete that image?</h2>
+		<a 
+			class="button"
+			tabindex="{{(getModalState() === true) ? '1' : '-1'}}"
+			(click)="deleteCard()"
+			(keyup)="$event.keyCode === 13 ? deleteCard() : null"
+			href="javascript:;">Yes</a>
+		<a
+			class="button"
+			tabindex="{{(getModalState() === true) ? '1' : '-1'}}"
+			(click)="setModalState(false)"
+			(keyup)="$event.keyCode === 13 ? setModalState(false) : null"
+			href="javascript:;">No</a>
+	</div>
+</div>

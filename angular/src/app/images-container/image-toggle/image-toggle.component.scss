@@ -1,0 +1,55 @@
+//----------  cards toggle
+//------------------------------------------------------------------------------
+@import 'src/assets/scss/config/variables';
+@import 'src/assets/scss/base/breakpoints';
+
+
+.cards-toggle {
+	text-align: right;
+	font-size: 0;
+	padding: 40px 0 42px;
+}
+.cards-toggle__item {
+	display: inline-block;
+	label {
+		border: 2px solid $purple;
+		text-align: center;
+		font-size: 1rem;
+		padding: 9px 37px;
+		display: block;
+		background-color: $purple;
+		transition: $duration $easing;
+		transition-property: background-color, color;
+		color: $white;
+		user-select: none;
+	}
+	input:checked + label {
+		background-color: transparent;
+		color: $purple;
+	}
+	input:focus,
+	input:hover {
+		+ label {
+			background-color: rgba($purple, 0.7);
+			color: $white;
+		}
+	}
+
+	&:first-child {
+		label {
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+			border-right: 0;
+		}
+	}
+	&:last-child {
+		label {
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+			border-left: 0;
+		}
+	}
+	@include media-breakpoint-down(sm) {
+		width: 50%;
+	}
+}

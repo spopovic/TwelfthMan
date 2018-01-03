@@ -1,0 +1,28 @@
+<div class="errors" *ngIf="status">
+	<div class="wrap">
+			{{status}}
+	</div>
+</div>
+<div class="form">
+	<div class="wrap">
+		<form action="">
+			<div class="form__item">
+				<label for="input1">Chose an image title:</label>
+				<input type="text" id="input1" [(ngModel)]="fileName" [ngModelOptions]="{standalone: true}" placeholder="Image name">
+			</div>
+			<div class="form__item form__item--center">
+				<ng4-files-click (filesSelect)="filesSelect($event)">
+					<span class="button">Chose an image file</span>
+				</ng4-files-click>
+				<ng4-files-drop (filesSelect)="filesSelect($event)">
+					<div class="form__drop">
+						or drag it here
+					</div>
+				</ng4-files-drop>
+			</div>
+			<div class="form__action">
+				<button type="button" class="button" (click)="upload()">Submit new image</button>
+			</div>
+		</form>
+	</div>
+</div>

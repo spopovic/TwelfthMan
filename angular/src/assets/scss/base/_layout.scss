@@ -1,0 +1,17 @@
+//----------  layout
+//------------------------------------------------------------------------------
+
+body {
+	font-family: $font-default;
+	font-size: 14px;
+	background-color: $bg;
+	min-height: 100vh;
+}
+
+.wrap {
+	@extend %clearfix;
+	width: 100%;
+	max-width: 1066px;
+	padding: 0 20px;
+	margin: 0 auto;
+}

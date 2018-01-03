@@ -1,0 +1,27 @@
+//----------  button
+//------------------------------------------------------------------------------
+button,
+input[type='button'],
+input[type='submit'] {
+	background: none;
+	padding: 0;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+}
+
+.button {
+	border: 2px solid $purple;
+	text-align: center;
+	font-size: 1rem;
+	padding: 9px 37px;
+	display: inline-block;
+	transition: $duration $easing;
+	transition-property: color, background-color;
+	color: $purple;
+	border-radius: 5px;
+	&:hover {
+		color: $white;
+		background-color: $purple;
+	}
+}

@@ -1,0 +1,31 @@
+<div class="cards-action" [ngClass]="(getActionBarState()) ? 'cards-action cards-action--show' : 'cards-action'">
+	<a 
+		*ngIf="isActiveTab(1)"  
+		class="cards-action__button icon icon--trash" 
+		tabindex="{{ getTabIndex() }}"
+		(click)="callModal()"
+		(keyup)="$event.keyCode === 13 ? callModal() : null"
+		href="javascript:;"
+		>
+		<span class="sr-only">Delete</span>
+	</a>
+	<a
+		*ngIf="isActiveTab(1)"
+		class="cards-action__button icon icon--download"
+		tabindex="{{ getTabIndex() }}"
+		(click)="download(getImageUrl())"
+		href="javascript:;"
+		>
+		<span class="sr-only">Download</span>
+	</a>
+	<a
+		*ngIf="isActiveTab(0)"
+		href="javascript:;"
+		class="cards-action__button icon icon--restore"
+		tabindex="{{ getTabIndex() }}"
+		(click)="restoreCard()"
+		href="javascript:;"
+		>
+		<span class="sr-only">Restore</span>
+	</a>
+</div>

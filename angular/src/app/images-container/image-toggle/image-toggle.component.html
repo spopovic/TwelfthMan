@@ -1,0 +1,10 @@
+<div class="cards-toggle">
+	<div class="cards-toggle__item">
+		<input type="radio" id="rb1" class="sr-only" name="radio1" checked (click)="changeVisibleImages(getActiveImages(), 1)">
+		<label for="rb1">{{ activeText }}</label>
+	</div>
+	<div class="cards-toggle__item">
+		<input type="radio" id="rb2" class="sr-only" name="radio1" (click)="changeVisibleImages(getDeletedImages(), 0)">
+		<label for="rb2">{{ deleteText }}</label>
+	</div>
+</div>

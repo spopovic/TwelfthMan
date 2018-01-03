@@ -1,0 +1,61 @@
+//----------  card
+//------------------------------------------------------------------------------
+@import 'src/assets/scss/config/variables';
+@import 'src/assets/scss/base/breakpoints';
+.cards {
+	[class^='col'] {
+		margin-bottom: 15px;
+	}
+}
+
+.card {
+	border-radius: 3px;
+	border: 1px solid $border;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	margin-bottom: 15px;
+	box-shadow: 0 0 5px 1px $border;
+	cursor: pointer;
+	&.card--active,
+	&:focus,
+	&:hover {
+		.card__content {
+			background-color: rgba($purple, 0.1);
+		}
+	}
+}
+
+.card--active {
+	.card__content {
+		background-color: rgba($purple, 0.1);
+	}
+}
+
+.card__image {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-bottom: 1px solid $border;
+	&::after {
+		content: '';
+		display: block;
+		padding-top: 56.14%;
+	}
+}
+
+.card__content {
+	background-color: $white;
+	flex: 1;
+	text-align: center;
+	padding: 18px 10px 0;
+	min-height: 60px;
+	transition: $duration $easing;
+	transition-property: background-color;
+	h2 {
+		color: $purple-font;
+		font-size: 13px;
+		letter-spacing: 0.6px;
+	}
+}

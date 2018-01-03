@@ -1,0 +1,76 @@
+//----------  form
+//------------------------------------------------------------------------------
+@import 'src/assets/scss/config/variables';
+
+.errors,
+.form {
+	max-width: 640px;
+	margin: 25px auto 0;
+	background-color: $white;
+	padding: 20px 0;
+	box-shadow: 0 0 5px 1px $border;
+}
+.form__item {
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgba($purple, 0.3);
+	label {
+		color: $purple-font;
+		margin-bottom: 10px;
+		display: inline-block;
+	}
+	input {
+		display: block;
+		appearance: none;
+		border-radius: 4px;
+		border: 1px solid $purple;
+		padding: 10px 5px;
+		width: 100%;
+		background-color: $bg;
+		color: $purple;
+		&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		color: rgba($purple, 0.5);
+		}
+		&::-moz-placeholder { /* Firefox 19+ */
+		color: rgba($purple, 0.5);
+		}
+		&:-ms-input-placeholder { /* IE 10+ */
+		color: rgba($purple, 0.5);
+		}
+		&:-moz-placeholder { /* Firefox 18- */
+		color: rgba($purple, 0.5);
+		}
+	}
+}
+.form__item--center {
+	text-align: center;
+}
+.form__action {
+	text-align: center;
+}
+.form__drop {
+	display: block;
+	border-radius: 4px;
+	border: 1px solid $purple;
+	padding: 10px 5px;
+	width: 100%;
+	background-color: $bg;
+	color: $purple;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 40px;
+	margin-top: 20px;
+}
+.errors {
+	color: #a94442;
+	background-color: #f2dede;
+	border: 1px solid #ebccd1;
+	li {
+		margin-bottom: 0.5em;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

@@ -1,0 +1,40 @@
+@import 'src/assets/scss/config/variables';
+:host {
+	width: 100%;
+}
+
+.navigation {
+	text-align: right;
+	margin-bottom: 1em;
+}
+
+.navigation__item {
+	display: inline-block;
+	margin-left: 10px;
+	&:first-child {
+		margin-left: 0;
+	}
+}
+
+.navigation__link {
+	color: $purple;
+	text-decoration: none;
+	display: block;
+	overflow: hidden;
+	&::after {
+		content: '';
+		display: block;
+		height: 0;
+		border-bottom: 2px solid $purple;
+		transform: translate(-101%, 0);
+		transition: $duration $easing;
+		transition-property: transform;
+	}
+	&.navigation__link--active,
+	&:focus,
+	&:hover {
+		&::after {
+			transform: translate(0, 0);
+		}
+	}
+}

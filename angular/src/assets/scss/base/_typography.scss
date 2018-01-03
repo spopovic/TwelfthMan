@@ -1,0 +1,29 @@
+//----------  typography
+//------------------------------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: $font-default;
+	font-weight: normal;
+	line-height: 1.35em;
+}
+
+
+// Icon font
+.icon {
+	font-size: 30px;
+	display: inline-block;
+	line-height: 1;
+}
+
+.sr-only {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	left: -999px;
+}
